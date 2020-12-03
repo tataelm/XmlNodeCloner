@@ -10,12 +10,12 @@ public class MainTest {
     public void Test1() {
         try
         {
-            XmlNodeCloner xmlNodeCloner = new XmlNodeCloner("src/input.xml", "element", 2);
+            XmlNodeCloner xmlNodeCloner = new XmlNodeCloner("test/input.xml", "element", 2);
             //xmlNodeCloner.setIfCloneLatestOrCertain(true);
-            //xmlNodeCloner.selectCloningElementByTagValue("name", "user12");
+            //xmlNodeCloner.selectCloningElementByTagValue("name", "user1");
             xmlNodeCloner.addXmlTagsToEnumerate("name","count");
-            xmlNodeCloner.isAlreadyIterated(true);
-            xmlNodeCloner.setmEnumeratorStyle(EnumeratorStyle.DEFAULT);
+            //xmlNodeCloner.isAlreadyIterated(true);
+            //xmlNodeCloner.setmEnumeratorStyle(EnumeratorStyle.SPACE_DASH_SPACE);
             xmlNodeCloner.runCloner();
         }
         catch (Exception ex)

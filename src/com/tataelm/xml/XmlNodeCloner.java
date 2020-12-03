@@ -4,15 +4,14 @@ import java.io.File;
 import java.util.*;
 
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.parsers.DocumentBuilder;
-import org.w3c.dom.Document;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.Node;
-import org.w3c.dom.Element;
+
+import org.w3c.dom.*;
 
 public class XmlNodeCloner {
 
@@ -135,7 +134,6 @@ public class XmlNodeCloner {
                     } else {
                         textValue = hashmapChildNodes.get(nodeName).value;
                     }
-
                     childElement.appendChild(document.createTextNode(textValue));
                     mainElement.appendChild(childElement);
                 }
@@ -147,6 +145,8 @@ public class XmlNodeCloner {
 
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
             StreamResult result = new StreamResult(mXmlPath);
             transformer.transform(source, result);
 
@@ -170,32 +170,25 @@ public class XmlNodeCloner {
             default:
             case DEFAULT:
                 return value + cloneIndex;
-
             case DASH:
                 return value + "-" + cloneIndex;
-
-
             case SPACE_DASH_SPACE:
                 return value + " - " + cloneIndex;
-
             case UNDERSCORE:
                 return value + "_" + cloneIndex;
-
             case SPACE_UNDERSCORE_SPACE:
                 return value + " _ " + cloneIndex;
         }
     }
 
-
-
     /**
      * This fills hashmapChildNodes with nodes and their XmlValueHolders, which
      * holds the information of whether they get enumerated or not
      */
-    private Map<String, XmlNodeCloner.XmlValueHolder> fillHashMapChildNodes(Node choosenNode) {
+    private Map<String, XmlNodeCloner.XmlValueHolder> fillHashMapChildNodes(Node chosenNode) {
         Map<String, XmlValueHolder> hashmapChildNodes = new HashMap<>();
 
-        NodeList nodeListForChildElements = choosenNode.getChildNodes();
+        NodeList nodeListForChildElements = chosenNode.getChildNodes();
         for (int i = 0; i < nodeListForChildElements.getLength(); i++) {
             Node currentNode = nodeListForChildElements.item(i);
 
@@ -229,7 +222,6 @@ public class XmlNodeCloner {
                         hashmapChildNodes.put(currentNode.getNodeName(),
                                 new XmlValueHolder(currentNode.getTextContent(), isToEnumerate));
                     }
-
                 }
             }
         }
@@ -240,7 +232,6 @@ public class XmlNodeCloner {
      * Find the last iteration index by looking end of the string value
      * */
     private void findLastIterationIndex(String textContent) {
-
         if(!mIsLastIterationIndexChecked)
         {
             try

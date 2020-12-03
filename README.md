@@ -69,7 +69,6 @@ xmlNodeCloner.selectCloningElementByTagValue("name", "user2");
 ```
 
 ## Knows issues
-  - Exported xml format is working but not styled
   - There is no configuration to work with attributes
 
 

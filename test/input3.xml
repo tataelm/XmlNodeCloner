@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><catalog>
+   <book id="bk101">
+      <author>Gambardella, Matthew</author>
+      <title>XML Developer's Guide</title>
+      <genre>Computer</genre>
+      <price>44.95</price>
+      <publish_date>2000-10-01</publish_date>
+      <description>An in-depth look at creating applications 
+      with XML.</description>
+   </book>
+<book><author>Gambardella, Matthew</author><price>44.95</price><genre>Computer_1</genre><description>An in-depth look at creating applications 
+      with XML.</description><title>XML Developer's Guide</title><publish_date>2000-10-01</publish_date></book><book><author>Gambardella, Matthew</author><price>44.95</price><genre>Computer_2</genre><description>An in-depth look at creating applications 
+      with XML.</description><title>XML Developer's Guide</title><publish_date>2000-10-01</publish_date></book></catalog>

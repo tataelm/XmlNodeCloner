@@ -317,8 +317,5 @@ public class XmlNodeCloner {
         }
     }
 
-    enum EnumeratorStyle {
-        DEFAULT, DASH, SPACE_DASH_SPACE, UNDERSCORE, SPACE_UNDERSCORE_SPACE
-    }
 
 }

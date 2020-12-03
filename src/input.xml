@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><rpc>
+    <edit-config>
+        <config>
+            <element>
+                <name> user1</name>
+                <place> wakanda </place>
+                <count> number1</count>
+            </element>
+            <element>
+                <name>user2</name>
+                <place> wakanda </place>
+                <count> number2</count>
+            </element>
+            <element>
+                <name> user3</name>
+                <place> wakanda </place>
+                <count> number3</count>
+            </element>
+            <element>
+                <name> user4</name>
+                <place> wakanda </place>
+                <count> number4</count>
+            </element>
+            <element>
+                <name> user5</name>
+                <place> wakanda </place>
+                <count> number5</count>
+            </element>            
+		</config>
+    </edit-config>
+</rpc>
